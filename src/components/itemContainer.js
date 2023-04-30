@@ -1,6 +1,7 @@
 import Items from "./items";
 import SearchForm from "./searchForm";
 import SearchListResult from "./searchListResult";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
@@ -39,35 +40,38 @@ const ItemContainer = () => {
   };
 
   return (
-    <div>
-      <input
-        type="radio"
-        name="type"
-        onChange={() => {
-          handleTypeChange("drink");
-        }}
-      />
-      Drink
-      <input
-        type="radio"
-        name="type"
-        onChange={() => {
-          handleTypeChange("food");
-        }}
-      />
-      Food
-      <input
-        type="radio"
-        name="type"
-        onChange={() => {
-          handleTypeChange("");
-        }}
-      />
-      All
-      <Items items={items} />
-      <SearchForm handleChange={handleChange} search={search} />
-      <SearchListResult itemsSearchData={itemsSearchData} />
-    </div>
+    <center>
+      <div>
+        <input
+          type="radio"
+          name="type"
+          onChange={() => {
+            handleTypeChange("drink");
+          }}
+        />
+        Drink
+        <input
+          type="radio"
+          name="type"
+          onChange={() => {
+            handleTypeChange("food");
+          }}
+        />
+        Food
+        <input
+          type="radio"
+          name="type"
+          onChange={() => {
+            handleTypeChange("");
+          }}
+        />
+        All
+        <Items items={items} />
+        <br />
+        <SearchForm handleChange={handleChange} search={search} />
+        <SearchListResult itemsSearchData={itemsSearchData} />
+      </div>
+    </center>
   );
 };
 
